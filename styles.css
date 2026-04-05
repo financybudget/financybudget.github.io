@@ -610,11 +610,11 @@ body[data-theme="dark"] .hero-button-primary small {
 }
 
 .side-ad-left {
-  left: max(12px, calc((15vw - 160px) / 2));
+  left: max(12px, calc((100vw - min(1240px, 70vw)) / 2 - 80px));
 }
 
 .side-ad-right {
-  right: max(12px, calc((15vw - 160px) / 2));
+  right: max(12px, calc((100vw - min(1240px, 70vw)) / 2 - 80px));
 }
 
 .search-results.hidden {
