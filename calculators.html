@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Financy | Calculators</title>
+  <link rel="icon" type="image/png" href="logo_financy.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="calculators">
+  <div class="site-shell">
+    <header class="topbar glass">
+      <a class="brand" href="index.html">
+        <span class="brand-mark"><img src="logo_financy.png" alt="Financy logo"></span>
+        <div>
+          <strong>Financy</strong>
+          <p>Budget Manager</p>
+        </div>
+      </a>
+      <nav class="nav-pills">
+        <a href="index.html">Home</a>
+        <a class="active" href="calculators.html">Calculators</a>
+        <a href="planner.html">Planner</a>
+      </nav>
+      <div class="top-actions">
+        <label class="search-pill">
+          <input id="site-search" type="search" placeholder="Search tools, pages, topics">
+        </label>
+        <button class="pill-button secondary icon-button" id="theme-toggle" type="button" aria-label="Toggle theme" title="Toggle theme"></button>
+      </div>
+    </header>
+
+    <main class="page-grid calculators-layout">
+      <section class="matte-card section-span">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Money calculators</span>
+            <h1>Figure out payments, savings, and future money fast.</h1>
+          </div>
+        </div>
+        <p class="lead">Use these tools to check loan payments, savings growth, emergency fund goals, and retirement money. Your numbers stay saved on this device.</p>
+      </section>
+
+      <section class="matte-card section-span searchable tool-split-card" id="loan-calculator" data-title="Loan payment calculator loan amortization monthly payment debt interest">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Debt</span>
+            <h2>Loan payment</h2>
+          </div>
+        </div>
+        <div class="tool-split">
+          <form class="tool-form" id="loan-form">
+            <label><span>Loan amount</span><input name="amount" type="number" min="0" step="0.01" value="25000"></label>
+            <label><span>Yearly interest rate (%)</span><input name="apr" type="number" min="0" step="0.01" value="6.5"></label>
+            <label><span>Term in years</span><input name="years" type="number" min="1" step="1" value="5"></label>
+            <button class="pill-button" type="submit">Calculate</button>
+          </form>
+          <div class="visual-panel">
+            <span class="visual-label">Monthly payment</span>
+            <strong class="visual-value" id="loan-big-value">$0</strong>
+            <div class="progress giant"><span id="loan-meter"></span></div>
+            <p class="visual-summary" id="loan-summary">Monthly payment will appear here.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="matte-card section-span searchable tool-split-card" id="compound-calculator" data-title="Compound interest calculator investment savings growth returns">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Investing</span>
+            <h2>Compound growth</h2>
+          </div>
+        </div>
+        <div class="tool-split">
+          <form class="tool-form" id="compound-form">
+            <label><span>Starting amount</span><input name="principal" type="number" min="0" step="0.01" value="10000"></label>
+            <label><span>Monthly contribution</span><input name="monthly" type="number" min="0" step="0.01" value="500"></label>
+            <label><span>Expected yearly growth (%)</span><input name="rate" type="number" min="0" step="0.01" value="7"></label>
+            <label><span>Years</span><input name="years" type="number" min="1" step="1" value="20"></label>
+            <button class="pill-button" type="submit">Project</button>
+          </form>
+          <div class="visual-panel">
+            <span class="visual-label">Projected value</span>
+            <strong class="visual-value" id="compound-big-value">$0</strong>
+            <div class="progress giant"><span id="compound-meter"></span></div>
+            <p class="visual-summary" id="compound-summary">Future value will appear here.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="matte-card section-span searchable tool-split-card" id="emergency-calculator" data-title="Emergency fund calculator reserve months living expenses">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Cash reserve</span>
+            <h2>Emergency fund</h2>
+          </div>
+        </div>
+        <div class="tool-split">
+          <form class="tool-form" id="emergency-form">
+            <label><span>Essential monthly spending</span><input name="expenses" type="number" min="0" step="0.01" value="2800"></label>
+            <label><span>Months to cover</span><input name="months" type="number" min="1" step="1" value="6"></label>
+            <button class="pill-button" type="submit">Estimate</button>
+          </form>
+          <div class="visual-panel">
+            <span class="visual-label">Cash reserve goal</span>
+            <strong class="visual-value" id="emergency-big-value">$0</strong>
+            <div class="progress giant"><span id="emergency-meter"></span></div>
+            <p class="visual-summary" id="emergency-summary">Target reserve will appear here.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="matte-card section-span searchable tool-split-card" id="retirement-calculator" data-title="Retirement calculator future nest egg investment projection">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Retirement</span>
+            <h2>Retirement projection</h2>
+          </div>
+        </div>
+        <div class="tool-split">
+          <form class="tool-form" id="retirement-form">
+            <label><span>Current age</span><input name="currentAge" type="number" min="18" step="1" value="30"></label>
+            <label><span>Retirement age</span><input name="retireAge" type="number" min="19" step="1" value="65"></label>
+            <label><span>Money already saved</span><input name="balance" type="number" min="0" step="0.01" value="15000"></label>
+            <label><span>Monthly investing</span><input name="monthly" type="number" min="0" step="0.01" value="600"></label>
+            <label><span>Expected yearly growth (%)</span><input name="rate" type="number" min="0" step="0.01" value="7"></label>
+            <button class="pill-button" type="submit">Forecast</button>
+          </form>
+          <div class="visual-panel">
+            <span class="visual-label">Retirement value</span>
+            <strong class="visual-value" id="retirement-big-value">$0</strong>
+            <div class="progress giant"><span id="retirement-meter"></span></div>
+            <p class="visual-summary" id="retirement-summary">Projected retirement value will appear here.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="side-ad side-ad-left" aria-label="Left ad space">
+    <strong>Left Ad</strong>
+  </div>
+  <div class="side-ad side-ad-right" aria-label="Right ad space">
+    <strong>Right Ad</strong>
+  </div>
+
+  <div class="search-results matte-card hidden" id="search-results"></div>
+
+  <aside class="ai-dock glass" id="ai-dock">
+    <div class="ai-log" id="ai-log"></div>
+    <form class="ai-form" id="ai-form">
+      <input id="ai-input" type="text" placeholder="Ask about budgets, loans, savings, or retirement">
+      <button class="pill-button" type="submit">Ask AI</button>
+      <button class="pill-button secondary icon-button ai-toggle" id="ai-clear" type="button" aria-label="Minimize AI bar" title="Minimize AI bar">×</button>
+    </form>
+  </aside>
+
+  <script src="app.js"></script>
+</body>
+</html>

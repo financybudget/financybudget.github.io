@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Financy | Planner</title>
+  <link rel="icon" type="image/png" href="logo_financy.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="planner">
+  <div class="site-shell">
+    <header class="topbar glass">
+      <a class="brand" href="index.html">
+        <span class="brand-mark"><img src="logo_financy.png" alt="Financy logo"></span>
+        <div>
+          <strong>Financy</strong>
+          <p>Budget Manager</p>
+        </div>
+      </a>
+      <nav class="nav-pills">
+        <a href="index.html">Home</a>
+        <a href="calculators.html">Calculators</a>
+        <a class="active" href="planner.html">Planner</a>
+      </nav>
+      <div class="top-actions">
+        <label class="search-pill">
+          <input id="site-search" type="search" placeholder="Search tools, pages, topics">
+        </label>
+        <button class="pill-button secondary icon-button" id="theme-toggle" type="button" aria-label="Toggle theme" title="Toggle theme"></button>
+      </div>
+    </header>
+
+    <main class="page-grid">
+      <section class="matte-card section-span">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Money planner</span>
+            <h1>See where your money goes each month.</h1>
+          </div>
+        </div>
+        <p class="lead">Add your income, bills, spending, and what you owe. Everything saves on this device so you can come back and keep updating it.</p>
+      </section>
+
+      <section class="matte-card section-span searchable tool-split-card" data-title="Budget planner monthly income fixed costs flex spending savings">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Budget</span>
+            <h2>Monthly budget setup</h2>
+          </div>
+        </div>
+        <div class="tool-split">
+          <form class="tool-form two-column" id="budget-form">
+            <label><span>Take-home income</span><input name="income" type="number" min="0" step="0.01" value="5200"></label>
+            <label><span>Housing</span><input name="housing" type="number" min="0" step="0.01" value="1600"></label>
+            <label><span>Utilities</span><input name="utilities" type="number" min="0" step="0.01" value="240"></label>
+            <label><span>Groceries</span><input name="groceries" type="number" min="0" step="0.01" value="520"></label>
+            <label><span>Transportation</span><input name="transportation" type="number" min="0" step="0.01" value="350"></label>
+            <label><span>Insurance</span><input name="insurance" type="number" min="0" step="0.01" value="280"></label>
+            <label><span>Debt payments</span><input name="debt" type="number" min="0" step="0.01" value="400"></label>
+            <label><span>Personal spending</span><input name="personal" type="number" min="0" step="0.01" value="500"></label>
+            <label><span>Investing / saving</span><input name="saving" type="number" min="0" step="0.01" value="700"></label>
+            <button class="pill-button" type="submit">Save budget</button>
+          </form>
+          <div class="visual-panel">
+            <span class="visual-label">Monthly leftover</span>
+            <strong class="visual-value" id="budget-big-value">$0</strong>
+            <div class="progress giant"><span id="budget-meter"></span></div>
+            <p class="visual-summary" id="budget-summary">Budget summary will appear here.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="matte-card section-span searchable tool-split-card" data-title="Expense tracker transaction list notes spending tracker local storage">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Spending</span>
+            <h2>Quick expense tracker</h2>
+          </div>
+        </div>
+        <div class="tool-split">
+          <div>
+            <form class="tool-form inline-form" id="expense-form">
+              <label><span>Label</span><input name="label" type="text" maxlength="40" placeholder="Coffee, gas, dinner"></label>
+              <label><span>Amount</span><input name="amount" type="number" min="0" step="0.01" placeholder="0.00"></label>
+              <button class="pill-button" type="submit">Add expense</button>
+            </form>
+            <div class="expense-list" id="expense-list"></div>
+            <div class="row-actions">
+              <button class="pill-button secondary" id="clear-expenses" type="button">Clear expenses</button>
+            </div>
+          </div>
+          <div class="visual-panel">
+            <span class="visual-label">Tracked spending</span>
+            <strong class="visual-value" id="expense-big-value">$0</strong>
+            <div class="progress giant"><span id="expense-meter"></span></div>
+            <p class="visual-summary" id="expense-total">Tracked expenses: $0</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="matte-card section-span searchable tool-split-card" id="networth-section" data-title="Money tracker what you own what you owe money summary">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Money snapshot</span>
+            <h2>What you own vs what you owe</h2>
+          </div>
+        </div>
+        <div class="tool-split">
+          <form class="tool-form two-column" id="networth-form">
+            <label><span>Cash</span><input name="cash" type="number" min="0" step="0.01" value="5000"></label>
+            <label><span>Money in investing accounts</span><input name="investments" type="number" min="0" step="0.01" value="18000"></label>
+            <label><span>Property / car value</span><input name="property" type="number" min="0" step="0.01" value="9000"></label>
+            <label><span>Credit cards</span><input name="cards" type="number" min="0" step="0.01" value="1200"></label>
+            <label><span>Student / personal loans</span><input name="loans" type="number" min="0" step="0.01" value="15000"></label>
+            <label><span>Car loan / home loan</span><input name="securedDebt" type="number" min="0" step="0.01" value="0"></label>
+            <button class="pill-button" type="submit">Save money snapshot</button>
+          </form>
+          <div class="visual-panel">
+            <span class="visual-label">Money left after debt</span>
+            <strong class="visual-value" id="networth-big-value">$0</strong>
+            <div class="progress giant"><span id="networth-meter"></span></div>
+            <p class="visual-summary" id="networth-summary">Your money summary will appear here.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="matte-card section-span searchable tool-split-card" data-title="Bills tracker recurring bills payment dates reminders savings score debt load">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Signals</span>
+            <h2>Recurring costs and scores</h2>
+          </div>
+        </div>
+        <div class="tool-split">
+          <div class="list-panel" id="bill-snapshot">
+            <div class="list-row">
+              <strong>Housing + utilities</strong>
+              <span id="bill-housing">$0</span>
+            </div>
+            <div class="list-row">
+              <strong>Transport + insurance</strong>
+              <span id="bill-transport">$0</span>
+            </div>
+            <div class="list-row">
+              <strong>Debt payments</strong>
+              <span id="bill-debt">$0</span>
+            </div>
+          </div>
+          <div class="visual-panel dual-panel">
+            <div>
+              <span class="visual-label">Savings score</span>
+              <strong class="visual-value small" id="savings-score-label">0 / 100</strong>
+              <div class="progress giant"><span id="savings-score-bar"></span></div>
+            </div>
+            <div>
+              <span class="visual-label">Debt load</span>
+              <strong class="visual-value small" id="debt-score-label">0 / 100</strong>
+              <div class="progress giant"><span id="debt-score-bar"></span></div>
+            </div>
+            <p class="visual-summary" id="signals-summary">Save your budget to see both scores move.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="side-ad side-ad-left" aria-label="Left ad space">
+    <strong>Left Ad</strong>
+  </div>
+  <div class="side-ad side-ad-right" aria-label="Right ad space">
+    <strong>Right Ad</strong>
+  </div>
+
+  <div class="search-results matte-card hidden" id="search-results"></div>
+
+  <aside class="ai-dock glass" id="ai-dock">
+    <div class="ai-log" id="ai-log"></div>
+    <form class="ai-form" id="ai-form">
+      <input id="ai-input" type="text" placeholder="Ask about budgets, loans, savings, or retirement">
+      <button class="pill-button" type="submit">Ask AI</button>
+      <button class="pill-button secondary icon-button ai-toggle" id="ai-clear" type="button" aria-label="Minimize AI bar" title="Minimize AI bar">×</button>
+    </form>
+  </aside>
+
+  <script src="app.js"></script>
+</body>
+</html>

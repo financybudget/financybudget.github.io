@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Financy | Budget Manager</title>
+  <link rel="icon" type="image/png" href="logo_financy.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="home">
+  <div class="site-shell">
+    <header class="topbar glass">
+      <a class="brand" href="index.html">
+        <span class="brand-mark"><img src="logo_financy.png" alt="Financy logo"></span>
+        <div>
+          <strong>Financy</strong>
+          <p>Budget Manager</p>
+        </div>
+      </a>
+      <nav class="nav-pills">
+        <a class="active" href="index.html">Home</a>
+        <a href="calculators.html">Calculators</a>
+        <a href="planner.html">Planner</a>
+      </nav>
+      <div class="top-actions">
+        <label class="search-pill">
+          <input id="site-search" type="search" placeholder="Search tools, pages, topics">
+        </label>
+        <button class="pill-button secondary icon-button" id="theme-toggle" type="button" aria-label="Toggle theme" title="Toggle theme"></button>
+      </div>
+    </header>
+
+    <main class="page-grid">
+      <section class="matte-card section-span home-hero">
+        <div class="home-hero-top">
+          <div class="home-hero-copy">
+            <h1>Plan your money without the mess.</h1>
+            <p class="lead">Use simple calculators, track spending, save your numbers on this device, and keep everything in one clean workspace.</p>
+          </div>
+          <div class="hero-actions hero-actions-strong hero-actions-stack">
+            <a class="hero-button hero-button-primary" href="planner.html">
+              <span>Open planner</span>
+              <small>Budget, spending, money snapshot</small>
+            </a>
+            <a class="hero-button hero-button-secondary" href="calculators.html">
+              <span>Open calculators</span>
+              <small>Loans, savings, emergency fund</small>
+            </a>
+          </div>
+        </div>
+        <div class="home-highlight-grid">
+          <article class="highlight-card">
+            <span class="visual-label">Monthly leftover</span>
+            <strong class="visual-value small" id="home-leftover">$0</strong>
+            <div class="progress giant"><span id="home-leftover-meter"></span></div>
+            <p class="visual-summary">Saved from your budget planner.</p>
+          </article>
+          <article class="highlight-card">
+            <span class="visual-label">Savings rate</span>
+            <strong class="visual-value small" id="home-savings-rate">0%</strong>
+            <div class="progress giant"><span id="home-savings-meter"></span></div>
+            <p class="visual-summary">How much of your monthly income you keep.</p>
+          </article>
+          <article class="highlight-card">
+            <span class="visual-label">Money left after debt</span>
+            <strong class="visual-value small" id="insight-networth">$0</strong>
+            <div class="progress giant"><span id="home-networth-meter"></span></div>
+            <p class="visual-summary">Saved from what you own vs what you owe.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="matte-card section-span home-tools">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Tool hub</span>
+            <h2>Useful money tools in one place</h2>
+          </div>
+        </div>
+        <div class="tool-grid">
+          <article class="tool-card searchable" data-title="Budget planner monthly budget expenses income savings">
+            <span class="tool-tag">Planner</span>
+            <h3>Budget planner</h3>
+            <p>Track monthly income, fixed costs, flex spending, and your target savings rate.</p>
+            <a class="pill-button secondary" href="planner.html">Open</a>
+          </article>
+          <article class="tool-card searchable" data-title="Loan payment amortization debt calculator interest">
+            <span class="tool-tag">Debt</span>
+            <h3>Loan payment calculator</h3>
+            <p>Estimate monthly payments for personal, car, or home loans with simple interest and time inputs.</p>
+            <a class="pill-button secondary" href="calculators.html#loan-calculator">Open</a>
+          </article>
+          <article class="tool-card searchable" data-title="Compound interest savings growth calculator investment">
+            <span class="tool-tag">Investing</span>
+            <h3>Compound growth</h3>
+            <p>See how your principal and monthly contributions grow over time.</p>
+            <a class="pill-button secondary" href="calculators.html#compound-calculator">Open</a>
+          </article>
+          <article class="tool-card searchable" data-title="Emergency fund calculator months expenses cash reserve">
+            <span class="tool-tag">Safety</span>
+            <h3>Emergency fund</h3>
+            <p>Figure out how much cash you need for 3 to 12 months of living costs.</p>
+            <a class="pill-button secondary" href="calculators.html#emergency-calculator">Open</a>
+          </article>
+          <article class="tool-card searchable" data-title="Retirement projection calculator nest egg future value">
+            <span class="tool-tag">Future</span>
+            <h3>Retirement projection</h3>
+            <p>Model portfolio growth using current age, target age, and expected annual return.</p>
+            <a class="pill-button secondary" href="calculators.html#retirement-calculator">Open</a>
+          </article>
+          <article class="tool-card searchable" data-title="Net worth tracker assets liabilities dashboard">
+            <span class="tool-tag">Tracking</span>
+            <h3>What you own vs what you owe</h3>
+            <p>Save what you have and what you owe, then get a simple money snapshot.</p>
+            <a class="pill-button secondary" href="planner.html#networth-section">Open</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="matte-card section-span home-strip">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Built for daily use</span>
+            <h2>A cleaner finance homepage</h2>
+          </div>
+        </div>
+        <div class="feature-band">
+          <article class="feature-chip">
+            <strong>Budgeting</strong>
+            <p>Save monthly income, bills, and personal spending.</p>
+          </article>
+          <article class="feature-chip">
+            <strong>Calculators</strong>
+            <p>Check loans, savings growth, retirement, and emergency fund goals.</p>
+          </article>
+          <article class="feature-chip">
+            <strong>Local storage</strong>
+            <p>Your saved values stay on this device so you can come back later.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="side-ad side-ad-left" aria-label="Left ad space">
+    <strong>Left Ad</strong>
+  </div>
+  <div class="side-ad side-ad-right" aria-label="Right ad space">
+    <strong>Right Ad</strong>
+  </div>
+
+  <div class="search-results matte-card hidden" id="search-results"></div>
+
+  <aside class="ai-dock glass" id="ai-dock">
+    <div class="ai-log" id="ai-log"></div>
+    <form class="ai-form" id="ai-form">
+      <input id="ai-input" type="text" placeholder="Ask about budgets, loans, savings, or retirement">
+      <button class="pill-button" type="submit">Ask AI</button>
+      <button class="pill-button secondary icon-button ai-toggle" id="ai-clear" type="button" aria-label="Minimize AI bar" title="Minimize AI bar">×</button>
+    </form>
+  </aside>
+
+  <script src="app.js"></script>
+</body>
+</html>
