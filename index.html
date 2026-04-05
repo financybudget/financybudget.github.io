@@ -9,6 +9,46 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+
+  <style>
+    #adRight {
+  position: fixed;
+  right: 20px;
+  top: 40%;
+  transform: translateY(-50%);
+
+  width: 160px;
+  height: 600px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+
+  overflow: hidden;
+}
+
+    #adLeft {
+  position: fixed;
+  left: 20px;
+  top: 40%;
+  transform: translateY(-50%);
+
+  width: 160px;
+  height: 600px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+
+  overflow: hidden;
+}
+  </style>
 </head>
 <body data-page="home">
   <div class="site-shell">
@@ -145,8 +185,8 @@
     </main>
   </div>
 
-  <div class="side-ad side-ad-left" aria-label="Left ad space">
-   <script>
+  <div id="adLeft">
+    <script>
   atOptions = {
     'key' : '1086b78240f18aaf0e1004b42cc4445b',
     'format' : 'iframe',
@@ -157,8 +197,18 @@
 </script>
 <script src="https://www.highperformanceformat.com/1086b78240f18aaf0e1004b42cc4445b/invoke.js"></script>
   </div>
-  <div class="side-ad side-ad-right" aria-label="Right ad space">
-    <strong>Right Ad</strong>
+  
+  <div id="adRight">
+    <script>
+  atOptions = {
+    'key' : '347876f712a6bb3985297788fc272e66',
+    'format' : 'iframe',
+    'height' : 600,
+    'width' : 160,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/347876f712a6bb3985297788fc272e66/invoke.js"></script>
   </div>
 
   <div class="search-results matte-card hidden" id="search-results"></div>
